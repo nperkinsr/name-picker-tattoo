@@ -4,12 +4,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const resultSpan = document.querySelector(".name textPath");
   const registerSound = document.getElementById("register");
   const buzzingSound = document.getElementById("buzzing");
+  const textElement = document.querySelector(".name text");
+  const container = document.querySelector(".name");
+  const maxWidth = container.clientWidth;
 
   function capitalizeName(name) {
     return name
       .split(" ")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
       .join(" ");
+  }
+
+  function adjustFontSize() {
+    let fontSize = 42; //
+    textElement.setAttribute("font-size", fontSize);
+
+    while (textElement.getBBox().width > maxWidth && fontSize > 10) {
+      fontSize--;
+      textElement.setAttribute("font-size", fontSize);
+    }
   }
 
   pickNameButton.addEventListener("click", function () {
@@ -52,7 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
         buzzingSound.currentTime = 0;
         registerSound.play();
         resultSpan.classList.add("revealed");
+
+        adjustFontSize();
       }
     }, 400);
   });
+
+  adjustFontSize();
 });

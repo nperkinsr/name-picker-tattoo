@@ -101,21 +101,20 @@ main {
   border-radius: 0 1rem 1rem 0;
 }
 
-/* Gulf of Mexico text */
 .name {
   position: absolute;
-  top: 54%;
-  left: 49%;
+  top: 53%;
+  left: 47.5%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 270px;
   height: 100px;
 }
 
 .name text {
   fill: var(--color6);
-  font-size: 2rem;
   font-family: "Rye", serif;
-  font-weight: bold;
+  dominant-baseline: middle;
+  text-anchor: middle;
 }
 
 .pickNameButton {
