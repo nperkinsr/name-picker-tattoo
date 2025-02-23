@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Picker: Tattoo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Quicksand:wght@300..700&family=Rye&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <main>
+
+      <section class="input-section">
+        <p>Enter names into the list and click the button. One name will be randomly selected and tattooed on Buddy's
+          chest.</p>
+        <textarea id="nameInput" placeholder="One name per line"></textarea>
+        <button id="pickNameButton" class="pickNameButton">Let's pick a name</button>
+      </section>
+
+      <section class="tattoo-section">
+        <div class="tattoo-container">
+          <svg class="name" width="300" height="100">
+            <path id="curve" d="M10,50 Q150,10 290,50" fill="transparent" />
+            <text fill="var(--color6)" font-size="2rem" font-family="Rye, serif" font-weight="bold"
+              text-anchor="middle">
+              <textPath href="#curve" startOffset="50%">Geraldine</textPath>
+            </text>
+          </svg>
+          <img src="./assets/musculoso.jpg" alt="Man with tattoos" class="musculoso" width="700px">
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Sound Effect -->
+    <audio id="register" src="./assets/register.mp3"></audio>
+    <audio id="buzzing" src="./assets/buzz.mp3"></audio>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
